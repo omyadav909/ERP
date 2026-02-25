@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                             https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+    <display-name>ERP Portal</display-name>
+
+    <!-- Default Page -->
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- =======================
+          SERVLET MAPPINGS
+         ======================= -->
+
+    <!-- Login / Logout -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>erp.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>erp.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- Admin Servlets -->
+    <servlet>
+        <servlet-name>AddStudentServlet</servlet-name>
+        <servlet-class>erp.AddStudentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddStudentServlet</servlet-name>
+        <url-pattern>/admin/add-student</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EnrollStudentServlet</servlet-name>
+        <servlet-class>erp.EnrollStudentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EnrollStudentServlet</servlet-name>
+        <url-pattern>/admin/enroll-student</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- Student Dashboard -->
+    <servlet>
+        <servlet-name>StudentDashboardServlet</servlet-name>
+        <servlet-class>erp.StudentDashboardServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentDashboardServlet</servlet-name>
+        <url-pattern>/student/dashboard</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- =======================
+          COURSES + ATTENDANCE
+         ======================= -->
+
+    <servlet>
+        <servlet-name>StudentCoursesServlet</servlet-name>
+        <servlet-class>erp.StudentCoursesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentCoursesServlet</servlet-name>
+        <url-pattern>/api/student/courses</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StudentAttendanceServlet</servlet-name>
+        <servlet-class>erp.StudentAttendanceServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentAttendanceServlet</servlet-name>
+        <url-pattern>/api/student/attendance</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- Marks -->
+    <servlet>
+        <servlet-name>StudentMarksServlet</servlet-name>
+        <servlet-class>erp.StudentMarksServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentMarksServlet</servlet-name>
+        <url-pattern>/api/student/marks</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- Exams -->
+    <servlet>
+        <servlet-name>StudentExamServlet</servlet-name>
+        <servlet-class>erp.StudentExamServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentExamServlet</servlet-name>
+        <url-pattern>/api/student/exams</url-pattern>
+    </servlet-mapping>
+
+</web-app>
